@@ -56,6 +56,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Object")) {
+            CurrentInteractable = null;
+        }
+    }
+
     public void Kill() {
         _rb.gravityScale = 0;
         MoveAction.Disable();
